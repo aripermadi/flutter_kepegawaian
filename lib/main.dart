@@ -1,21 +1,22 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_kepegawaian/route/page.dart';
-import 'package:flutter_kepegawaian/screen/splash/splash.dart';
-import 'package:get/get.dart';
+import 'package:flutter_kepegawaian/routes.dart';
+import 'package:flutter_kepegawaian/screens/splash/splash_screen.dart';
+import 'package:flutter_kepegawaian/theme.dart';
 
 void main() {
   runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key key}) : super(key: key);
-
+  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return GetMaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
-      initialRoute: AppPages.INITIAL,
-      getPages: AppPages.pages,
+      title: 'Flutter Demo',
+      theme: theme(),
+      initialRoute: SplashScreen.routeName,
+      routes: routes,
     );
   }
 }
