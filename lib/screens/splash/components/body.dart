@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_kepegawaian/constants.dart';
-import 'package:flutter_kepegawaian/screens/home/home_screen.dart';
 import 'package:flutter_kepegawaian/screens/sign_in/sign_in_screen.dart';
 import 'package:flutter_kepegawaian/size_config.dart';
 
@@ -71,7 +70,7 @@ class _BodyState extends State<Body> {
                     DefaultButton(
                       text: "Continue",
                       press: () {
-                        Navigator.pushNamed(context, HomeScreen.routeName);
+                        Navigator.pushNamed(context, SignInScreen.routeName);
                       },
                     ),
                     Spacer(),
