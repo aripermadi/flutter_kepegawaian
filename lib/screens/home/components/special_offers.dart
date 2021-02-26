@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_kepegawaian/screens/Ketersediaan_TT/screen_tt.dart';
+import 'package:flutter_kepegawaian/screens/jadwal_dokter/jadwaldokter.dart';
 
 import '../../../size_config.dart';
 import 'section_title.dart';
@@ -7,7 +9,6 @@ class SpecialOffers extends StatelessWidget {
   const SpecialOffers({
     Key key,
   }) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -28,14 +29,16 @@ class SpecialOffers extends StatelessWidget {
               SpecialOfferCard(
                 image: "assets/images/bedhost.png",
                 category: "KAMAR",
-                /*numOfBrands: 18,*/
-                press: () {},
+                press: () {
+                  Navigator.pushNamed(context, KetersediaanTT.routeName);
+                },
               ),
               SpecialOfferCard(
                 image: "assets/images/praktek.png",
                 category: "JADWAL DOKTER",
-                numOfBrands: 24,
-                press: () {},
+                press: () {
+                  Navigator.pushNamed(context, JadwalDokter.routeName);
+                },
               ),
               SizedBox(width: getProportionateScreenWidth(20)),
             ],
@@ -51,12 +54,10 @@ class SpecialOfferCard extends StatelessWidget {
     Key key,
     @required this.category,
     @required this.image,
-    @required this.numOfBrands,
     @required this.press,
   }) : super(key: key);
 
   final String category, image;
-  final int numOfBrands;
   final GestureTapCallback press;
 
   @override
@@ -104,7 +105,6 @@ class SpecialOfferCard extends StatelessWidget {
                             fontWeight: FontWeight.bold,
                           ),
                         ),
-                        TextSpan(text: "$numOfBrands Brands")
                       ],
                     ),
                   ),
@@ -116,4 +116,6 @@ class SpecialOfferCard extends StatelessWidget {
       ),
     );
   }
+
+  Type get newMethod => SpecialOfferCard;
 }

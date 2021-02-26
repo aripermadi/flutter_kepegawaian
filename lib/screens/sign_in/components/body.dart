@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_kepegawaian/components/no_account_text.dart';
 import 'package:flutter_kepegawaian/components/socal_card.dart';
+import 'package:flutter_kepegawaian/screens/home/controller/controller.dart';
+import 'package:get/get.dart';
 import '../../../size_config.dart';
 import 'sign_form.dart';
 

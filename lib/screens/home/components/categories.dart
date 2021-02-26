@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_kepegawaian/screens/Ketersediaan_TT/screen_tt.dart';
+import 'package:flutter_kepegawaian/screens/Layanan_unggulan/layanan_unggulan.dart';
 import 'package:flutter_kepegawaian/screens/home/components/section_title.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -29,7 +31,9 @@ class Categories extends StatelessWidget {
               (index) => CategoryCard(
                 icon: categories[index]["icon"],
                 text: categories[index]["text"],
-                press: () {},
+                press: () {
+                  Navigator.pushNamed(context, LayananUnggulan.routeName);
+                },
               ),
             ),
           ),

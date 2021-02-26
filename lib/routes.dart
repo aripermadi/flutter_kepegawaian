@@ -1,9 +1,12 @@
 import 'package:flutter/widgets.dart';
+import 'package:flutter_kepegawaian/screens/Ketersediaan_TT/screen_tt.dart';
+import 'package:flutter_kepegawaian/screens/Layanan_unggulan/layanan_unggulan.dart';
 import 'package:flutter_kepegawaian/screens/cart/cart_screen.dart';
 import 'package:flutter_kepegawaian/screens/complete_profile/complete_profile_screen.dart';
 import 'package:flutter_kepegawaian/screens/details/details_screen.dart';
 import 'package:flutter_kepegawaian/screens/forgot_password/forgot_password_screen.dart';
 import 'package:flutter_kepegawaian/screens/home/home_screen.dart';
+import 'package:flutter_kepegawaian/screens/jadwal_dokter/jadwaldokter.dart';
 import 'package:flutter_kepegawaian/screens/login_success/login_success_screen.dart';
 import 'package:flutter_kepegawaian/screens/otp/otp_screen.dart';
 import 'package:flutter_kepegawaian/screens/profile/profile_screen.dart';
@@ -25,4 +28,7 @@ final Map<String, WidgetBuilder> routes = {
   DetailsScreen.routeName: (context) => DetailsScreen(),
   CartScreen.routeName: (context) => CartScreen(),
   ProfileScreen.routeName: (context) => ProfileScreen(),
+  KetersediaanTT.routeName: (context) => KetersediaanTT(),
+  JadwalDokter.routeName: (context) => JadwalDokter(),
+  LayananUnggulan.routeName: (context) => LayananUnggulan(),
 };

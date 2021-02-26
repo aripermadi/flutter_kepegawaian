@@ -3,8 +3,10 @@ import 'package:flutter_kepegawaian/components/custom_surfix_icon.dart';
 import 'package:flutter_kepegawaian/components/form_error.dart';
 import 'package:flutter_kepegawaian/helper/keyboard.dart';
 import 'package:flutter_kepegawaian/screens/forgot_password/forgot_password_screen.dart';
+import 'package:flutter_kepegawaian/screens/home/controller/controller.dart';
 import 'package:flutter_kepegawaian/screens/home/home_screen.dart';
 import 'package:flutter_kepegawaian/screens/login_success/login_success_screen.dart';
+import 'package:get/get.dart';
 
 import '../../../components/default_button.dart';
 import '../../../constants.dart';
@@ -16,6 +18,7 @@ class SignForm extends StatefulWidget {
 }
 
 class _SignFormState extends State<SignForm> {
+  final loginController = Get.put(HomeController());
   final _formKey = GlobalKey<FormState>();
   String email;
   String password;
@@ -73,8 +76,12 @@ class _SignFormState extends State<SignForm> {
           SizedBox(height: getProportionateScreenHeight(20)),
           DefaultButton(
             text: "Continue",
-            press: () {
-              Navigator.pushNamed(context, HomeScreen.routeName);
+            press: () async {
+              await loginController.login();
+              if (loginController.hasil.value == 'valid') {
+                Navigator.pushNamed(context, HomeScreen.routeName);
+              }
+              //Navigator.pushNamed(context, HomeScreen.routeName);
               /*if (_formKey.currentState.validate()) {
                 _formKey.currentState.save();
                 // if all are valid then go to success screen
@@ -90,6 +97,7 @@ class _SignFormState extends State<SignForm> {
 
   TextFormField buildPasswordFormField() {
     return TextFormField(
+      controller: loginController.ktp,
       obscureText: true,
       onSaved: (newValue) => password = newValue,
       onChanged: (value) {
@@ -123,6 +131,7 @@ class _SignFormState extends State<SignForm> {
 
   TextFormField buildEmailFormField() {
     return TextFormField(
+      controller: loginController.rkm,
       keyboardType: TextInputType.emailAddress,
       onSaved: (newValue) => email = newValue,
       onChanged: (value) {
