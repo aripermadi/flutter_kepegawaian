@@ -21,7 +21,7 @@ class Categories extends StatelessWidget {
       padding: EdgeInsets.all(getProportionateScreenWidth(20)),
       child: Column(
         children: [
-          SectionTitle(title: "Layanan Unggulan", press: () {}),
+          SectionTitle(title: "Fasilitas Dan Tarif", press: () {}),
           SizedBox(height: getProportionateScreenWidth(20)),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,

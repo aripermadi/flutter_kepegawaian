@@ -26,9 +26,9 @@ class DiscountBanner extends StatelessWidget {
         TextSpan(
           style: TextStyle(color: Colors.white),
           children: [
-            TextSpan(text: "Daftar ONLINE\n"),
+            TextSpan(text: "Buat Janji/BOOKING\n"),
             TextSpan(
-              text: "Rawat Jalan",
+              text: "PENDAFTARAN",
               style: TextStyle(
                 fontSize: getProportionateScreenWidth(24),
                 fontWeight: FontWeight.bold,
