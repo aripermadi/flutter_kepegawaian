@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_kepegawaian/screens/Ketersediaan_TT/screen_tt.dart';
-import 'package:flutter_kepegawaian/screens/Layanan_unggulan/layanan_unggulan.dart';
+import 'package:flutter_kepegawaian/screens/fasilitas/layanan_unggulan.dart';
 import 'package:flutter_kepegawaian/screens/home/components/section_title.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 

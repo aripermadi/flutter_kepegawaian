@@ -1,9 +1,13 @@
+import 'package:date_time_picker/date_time_picker.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_kepegawaian/components/custom_surfix_icon.dart';
 import 'package:flutter_kepegawaian/components/default_button.dart';
 import 'package:flutter_kepegawaian/components/form_error.dart';
 import 'package:flutter_kepegawaian/screens/complete_profile/complete_profile_screen.dart';
-
+import 'package:datetime_picker_formfield/datetime_picker_formfield.dart';
+import 'package:flutter_kepegawaian/screens/home/home_screen.dart';
+import 'package:flutter_kepegawaian/screens/login_success/login_success_screen.dart';
 import '../../../constants.dart';
 import '../../../size_config.dart';
 
@@ -13,11 +17,23 @@ class SignUpForm extends StatefulWidget {
 }
 
 class _SignUpFormState extends State<SignUpForm> {
+  final dateFormat = DateFormat("dd-M-yyyy");
   final _formKey = GlobalKey<FormState>();
   String email;
   String password;
   String conform_password;
   bool remember = false;
+  DateTime _date = DateTime.now();
+  String _valFriends;
+  List _myFriends = [
+    "POLIKLINIK UMUM",
+    "POLIKLINIK DALAM",
+    "POLIKLINIK THT",
+    "POLIKLINIK KULIT",
+    "POLIKLINIK MATA",
+    "POLIKLINIK ONKOLOGI",
+  ];
+
   final List<String> errors = [];
 
   void addError({String error}) {
@@ -42,19 +58,28 @@ class _SignUpFormState extends State<SignUpForm> {
         children: [
           buildEmailFormField(),
           SizedBox(height: getProportionateScreenHeight(30)),
-          buildPasswordFormField(),
+          buildAlamatFormField(),
           SizedBox(height: getProportionateScreenHeight(30)),
-          buildConformPassFormField(),
+          buildPhoneFormField(),
+          SizedBox(height: getProportionateScreenHeight(30)),
+          pilihpoli(),
+          SizedBox(height: getProportionateScreenHeight(30)),
+          pilihtanggal(),
+          SizedBox(height: getProportionateScreenHeight(30)),
+          buildPasswordFormField(),
+          //SizedBox(height: getProportionateScreenHeight(30)),
+          //buildConformPassFormField(),
           FormError(errors: errors),
           SizedBox(height: getProportionateScreenHeight(40)),
           DefaultButton(
-            text: "Continue",
+            text: "Lanjut",
             press: () {
-              if (_formKey.currentState.validate()) {
+              Navigator.pushNamed(context, LoginSuccessScreen.routeName);
+
+              /*if (_formKey.currentState.validate()) {
                 _formKey.currentState.save();
                 // if all are valid then go to success screen
-                Navigator.pushNamed(context, CompleteProfileScreen.routeName);
-              }
+              }*/
             },
           ),
         ],
@@ -100,30 +125,16 @@ class _SignUpFormState extends State<SignUpForm> {
       obscureText: true,
       onSaved: (newValue) => password = newValue,
       onChanged: (value) {
-        if (value.isNotEmpty) {
-          removeError(error: kPassNullError);
-        } else if (value.length >= 8) {
-          removeError(error: kShortPassError);
-        }
         password = value;
       },
-      validator: (value) {
-        if (value.isEmpty) {
-          addError(error: kPassNullError);
-          return "";
-        } else if (value.length < 8) {
-          addError(error: kShortPassError);
-          return "";
-        }
-        return null;
-      },
       decoration: InputDecoration(
-        labelText: "Password",
-        hintText: "Enter your password",
+        labelText: "Pesan",
+        hintText: "Pesan Anda",
         // If  you are using latest version of flutter then lable text and hint text shown like this
         // if you r using flutter less then 1.20.* then maybe this is not working properly
         floatingLabelBehavior: FloatingLabelBehavior.always,
-        suffixIcon: CustomSurffixIcon(svgIcon: "assets/icons/Lock.svg"),
+        suffixIcon:
+            CustomSurffixIcon(svgIcon: "assets/icons/Question mark.svg"),
       ),
     );
   }
@@ -151,13 +162,131 @@ class _SignUpFormState extends State<SignUpForm> {
         return null;
       },
       decoration: InputDecoration(
-        labelText: "Email",
-        hintText: "Enter your email",
+        labelText: "Nama",
+        hintText: "Enter your name",
         // If  you are using latest version of flutter then lable text and hint text shown like this
         // if you r using flutter less then 1.20.* then maybe this is not working properly
         floatingLabelBehavior: FloatingLabelBehavior.always,
         suffixIcon: CustomSurffixIcon(svgIcon: "assets/icons/Mail.svg"),
       ),
+    );
+  }
+
+  TextFormField buildAlamatFormField() {
+    return TextFormField(
+      keyboardType: TextInputType.emailAddress,
+      onSaved: (newValue) => email = newValue,
+      onChanged: (value) {
+        if (value.isNotEmpty) {
+          removeError(error: kEmailNullError);
+        } else if (emailValidatorRegExp.hasMatch(value)) {
+          removeError(error: kInvalidEmailError);
+        }
+        return null;
+      },
+      validator: (value) {
+        if (value.isEmpty) {
+          addError(error: kEmailNullError);
+          return "";
+        } else if (!emailValidatorRegExp.hasMatch(value)) {
+          addError(error: kInvalidEmailError);
+          return "";
+        }
+        return null;
+      },
+      decoration: InputDecoration(
+        labelText: "Alamat",
+        hintText: "Enter your alamat",
+        // If  you are using latest version of flutter then lable text and hint text shown like this
+        // if you r using flutter less then 1.20.* then maybe this is not working properly
+        floatingLabelBehavior: FloatingLabelBehavior.always,
+        suffixIcon: CustomSurffixIcon(svgIcon: "assets/icons/Mail.svg"),
+      ),
+    );
+  }
+
+  TextFormField buildPhoneFormField() {
+    return TextFormField(
+      keyboardType: TextInputType.emailAddress,
+      onSaved: (newValue) => email = newValue,
+      onChanged: (value) {
+        if (value.isNotEmpty) {
+          removeError(error: kEmailNullError);
+        } else if (emailValidatorRegExp.hasMatch(value)) {
+          removeError(error: kInvalidEmailError);
+        }
+        return null;
+      },
+      validator: (value) {
+        if (value.isEmpty) {
+          addError(error: kEmailNullError);
+          return "";
+        } else if (!emailValidatorRegExp.hasMatch(value)) {
+          addError(error: kInvalidEmailError);
+          return "";
+        }
+        return null;
+      },
+      decoration: InputDecoration(
+        labelText: "NO. HP",
+        hintText: "Enter your phone number",
+        // If  you are using latest version of flutter then lable text and hint text shown like this
+        // if you r using flutter less then 1.20.* then maybe this is not working properly
+        floatingLabelBehavior: FloatingLabelBehavior.always,
+        suffixIcon: CustomSurffixIcon(svgIcon: "assets/icons/Phone.svg"),
+      ),
+    );
+  }
+
+  DropdownButtonFormField pilihpoli() {
+    return DropdownButtonFormField(
+      hint: Text("Pilih POLIKLINIK"),
+      value: _valFriends,
+      items: _myFriends.map((value) {
+        return DropdownMenuItem(
+          child: Text(value),
+          value: value,
+        );
+      }).toList(),
+      onChanged: (value) {
+        setState(() {
+          _valFriends = value;
+        });
+      },
+      decoration: InputDecoration(
+        labelText: "PILIH POLI",
+
+        // If  you are using latest version of flutter then lable text and hint text shown like this
+        // if you r using flutter less then 1.20.* then maybe this is not working properly
+        floatingLabelBehavior: FloatingLabelBehavior.always,
+        suffixIcon: CustomSurffixIcon(svgIcon: "assets/icons/Phone.svg"),
+      ),
+    );
+  }
+
+  DateTimePicker pilihtanggal() {
+    return DateTimePicker(
+      //dateOnly: true,
+      //format: dateFormat,
+      firstDate: DateTime(2000),
+      lastDate: DateTime(2100),
+      validator: (val) {
+        if (val != null) {
+          return null;
+        } else {
+          return 'Date Field is Empty';
+        }
+      },
+      decoration: InputDecoration(
+        labelText: 'Pilih Tanggal',
+        suffixIcon: CustomSurffixIcon(svgIcon: "assets/icons/Mail.svg"),
+      ),
+
+      initialValue: '', //Add this in your Code.
+      //initialDate: _date,
+      onSaved: (value) {
+        debugPrint(value.toString());
+      },
     );
   }
 }

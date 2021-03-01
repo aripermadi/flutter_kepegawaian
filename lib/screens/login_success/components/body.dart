@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_kepegawaian/components/default_button.dart';
+import 'package:flutter_kepegawaian/screens/Ketersediaan_TT/components/list_kamar.dart';
 import 'package:flutter_kepegawaian/screens/home/home_screen.dart';
 import 'package:flutter_kepegawaian/size_config.dart';
 
@@ -8,7 +9,65 @@ class Body extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        SizedBox(height: SizeConfig.screenHeight * 0.04),
+        Row(
+          children: [
+            Text.rich(
+              TextSpan(text: "No. Booking :", style: TextStyle(fontSize: 20)),
+            ),
+          ],
+        ),
+        SizedBox(
+          height: (5),
+        ),
+        Row(
+          children: [
+            Text.rich(
+              TextSpan(text: "Tgl. Booking:", style: TextStyle(fontSize: 20)),
+            ),
+          ],
+        ),
+        SizedBox(
+          height: (5),
+        ),
+        Row(
+          children: [
+            Text.rich(
+              TextSpan(text: "Tgl. Periksa:", style: TextStyle(fontSize: 20)),
+            ),
+          ],
+        ),
+        SizedBox(
+          height: (5),
+        ),
+        Row(
+          children: [
+            Text.rich(TextSpan(text: "Nama:", style: TextStyle(fontSize: 20))),
+          ],
+        ),
+        Row(
+          children: [
+            Text.rich(
+                TextSpan(text: "No. HP:", style: TextStyle(fontSize: 20))),
+          ],
+        ),
+        Row(
+          children: [
+            Text.rich(TextSpan(text: "Email:", style: TextStyle(fontSize: 20))),
+          ],
+        ),
+        Row(
+          children: [
+            Text.rich(
+                TextSpan(text: "Alamat:", style: TextStyle(fontSize: 20))),
+          ],
+        ),
+        Row(
+          children: [
+            Text.rich(
+                TextSpan(text: "Poliklinik:", style: TextStyle(fontSize: 20))),
+          ],
+        ),
+        /*SizedBox(height: SizeConfig.screenHeight * 0.04),
         Image.asset(
           "assets/images/success.png",
           height: SizeConfig.screenHeight * 0.4, //40%
@@ -21,7 +80,7 @@ class Body extends StatelessWidget {
             fontWeight: FontWeight.bold,
             color: Colors.black,
           ),
-        ),
+        ),*/
         Spacer(),
         SizedBox(
           width: SizeConfig.screenWidth * 0.6,
