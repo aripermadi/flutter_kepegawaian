@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_kepegawaian/routes.dart';
+//import 'package:flutter_kepegawaian/routes.dart';
+import 'package:flutter_kepegawaian/routes/app_page.dart';
 import 'package:flutter_kepegawaian/screens/splash/splash_screen.dart';
 import 'package:flutter_kepegawaian/theme.dart';
 import 'package:get/get.dart';
@@ -16,8 +17,11 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: theme(),
-      initialRoute: SplashScreen.routeName,
-      routes: routes,
+      initialRoute: Routes.INITIAL,
+      home: SplashScreen(),
+      //initialRoute: SplashScreen.routeName,
+      //routes: AppPages(),
+      getPages: AppPages.pages,
     );
   }
 }

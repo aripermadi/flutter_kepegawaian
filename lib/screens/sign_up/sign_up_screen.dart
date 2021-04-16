@@ -8,9 +8,9 @@ class SignUpScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Booking"),
+        title: Text(" Cek Booking"),
       ),
-      body: Body(),
+      body: Center(child: Body()),
     );
   }
 }

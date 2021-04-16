@@ -26,13 +26,13 @@ dependencies:
   bloc: ^6.1.1
   cupertino_icons: ^1.0.0
   date_time_picker: ^1.1.1
+  datetime_picker_formfield: ^1.0.0
   flutter_auth: ^0.0.1
+  flutter_chat: ^1.1.0
   flutter_svg_provider: ^0.1.8
   get: ^3.25.4
   http: ^0.12.2
   provider: ^4.3.3
-  datetime_picker_formfield: ^1.0.0
-
 
 dev_dependencies:
   flutter_test:

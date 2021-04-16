@@ -8,6 +8,7 @@ import 'package:flutter_kepegawaian/screens/complete_profile/complete_profile_sc
 import 'package:datetime_picker_formfield/datetime_picker_formfield.dart';
 import 'package:flutter_kepegawaian/screens/home/home_screen.dart';
 import 'package:flutter_kepegawaian/screens/login_success/login_success_screen.dart';
+import 'package:get/get.dart';
 import '../../../constants.dart';
 import '../../../size_config.dart';
 
@@ -74,7 +75,8 @@ class _SignUpFormState extends State<SignUpForm> {
           DefaultButton(
             text: "Lanjut",
             press: () {
-              Navigator.pushNamed(context, LoginSuccessScreen.routeName);
+              Get.toNamed('/booking');
+              //Navigator.pushNamed(context, LoginSuccessScreen.routeName);
 
               /*if (_formKey.currentState.validate()) {
                 _formKey.currentState.save();
@@ -163,7 +165,7 @@ class _SignUpFormState extends State<SignUpForm> {
       },
       decoration: InputDecoration(
         labelText: "Nama",
-        hintText: "Enter your name",
+        hintText: "Nama Anda",
         // If  you are using latest version of flutter then lable text and hint text shown like this
         // if you r using flutter less then 1.20.* then maybe this is not working properly
         floatingLabelBehavior: FloatingLabelBehavior.always,
@@ -196,7 +198,7 @@ class _SignUpFormState extends State<SignUpForm> {
       },
       decoration: InputDecoration(
         labelText: "Alamat",
-        hintText: "Enter your alamat",
+        hintText: "Alamat Anda",
         // If  you are using latest version of flutter then lable text and hint text shown like this
         // if you r using flutter less then 1.20.* then maybe this is not working properly
         floatingLabelBehavior: FloatingLabelBehavior.always,
@@ -229,7 +231,7 @@ class _SignUpFormState extends State<SignUpForm> {
       },
       decoration: InputDecoration(
         labelText: "NO. HP",
-        hintText: "Enter your phone number",
+        hintText: "No HP Anda",
         // If  you are using latest version of flutter then lable text and hint text shown like this
         // if you r using flutter less then 1.20.* then maybe this is not working properly
         floatingLabelBehavior: FloatingLabelBehavior.always,

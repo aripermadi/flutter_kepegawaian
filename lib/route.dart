@@ -9,7 +9,10 @@ import 'package:flutter_kepegawaian/screens/home/home_screen.dart';
 import 'package:flutter_kepegawaian/screens/jadwal_dokter/jadwaldokter.dart';
 import 'package:flutter_kepegawaian/screens/login_success/login_success_screen.dart';
 import 'package:flutter_kepegawaian/screens/otp/otp_screen.dart';
+import 'package:flutter_kepegawaian/screens/pengaduan/pengaduan.dart';
 import 'package:flutter_kepegawaian/screens/profile/profile_screen.dart';
+import 'package:flutter_kepegawaian/screens/riwayat_booking/riwayat_booking.dart';
+import 'package:flutter_kepegawaian/screens/riwayat_perawatan/riwayat_perawatan.dart';
 import 'package:flutter_kepegawaian/screens/sign_in/sign_in_screen.dart';
 import 'package:flutter_kepegawaian/screens/splash/splash_screen.dart';
 import 'screens/sign_up/sign_up_screen.dart';
@@ -31,4 +34,7 @@ final Map<String, WidgetBuilder> routes = {
   KetersediaanTT.routeName: (context) => KetersediaanTT(),
   JadwalDokter.routeName: (context) => JadwalDokter(),
   LayananUnggulan.routeName: (context) => LayananUnggulan(),
+  RiwayatBooking.routeName: (context) => RiwayatBooking(),
+  Pengaduan.routeName: (context) => Pengaduan(),
+  RiwayatPerawatan.routeName: (context) => RiwayatPerawatan(),
 };

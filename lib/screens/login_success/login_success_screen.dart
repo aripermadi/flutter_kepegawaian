@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_kepegawaian/components/coustom_bottom_nav_bar.dart';
+import 'package:flutter_kepegawaian/enums.dart';
 
 import 'components/body.dart';
 
@@ -15,6 +17,8 @@ class LoginSuccessScreen extends StatelessWidget {
         ),
       ),
       body: Body(),
+      bottomNavigationBar:
+          CustomBottomNavBar(selectedMenu: MenuState.favourite),
     );
   }
 }

@@ -79,7 +79,8 @@ class _SignFormState extends State<SignForm> {
             press: () async {
               await loginController.login();
               if (loginController.hasil.value == 'valid') {
-                Navigator.pushNamed(context, HomeScreen.routeName);
+                Get.toNamed('/loginsukses');
+                //Navigator.pushNamed(context, HomeScreen.routeName);
               }
               //Navigator.pushNamed(context, HomeScreen.routeName);
               /*if (_formKey.currentState.validate()) {

@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_kepegawaian/screens/login_success/login_success_screen.dart';
+import 'package:flutter_kepegawaian/screens/pengaduan/pengaduan.dart';
 import 'package:flutter_kepegawaian/screens/profile/profile_screen.dart';
+import 'package:flutter_kepegawaian/screens/riwayat_booking/riwayat_booking.dart';
+import 'package:flutter_kepegawaian/screens/riwayat_perawatan/riwayat_perawatan.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_kepegawaian/screens/home/home_screen.dart';
 import 'package:flutter_kepegawaian/screens/profile/profile_screen.dart';
+import 'package:get/get.dart';
 
 import '../constants.dart';
 import '../enums.dart';
@@ -46,16 +51,38 @@ class CustomBottomNavBar extends StatelessWidget {
                       ? kPrimaryColor
                       : inActiveIconColor,
                 ),
-                onPressed: () =>
-                    Navigator.pushNamed(context, HomeScreen.routeName),
+                onPressed: () => Get.toNamed('/home'),
+                //Navigator.pushNamed(context, HomeScreen.routeName),
               ),
               IconButton(
-                icon: SvgPicture.asset("assets/icons/Heart Icon.svg"),
-                onPressed: () {},
+                icon: SvgPicture.asset(
+                  "assets/icons/Heart Icon.svg",
+                  color: MenuState.favourite == selectedMenu
+                      ? kPrimaryColor
+                      : inActiveIconColor,
+                ),
+                onPressed: () => Get.toNamed('/riwayatbooking'),
+                //Navigator.pushNamed(context, RiwayatBooking.routeName),
               ),
               IconButton(
-                icon: SvgPicture.asset("assets/icons/Chat bubble Icon.svg"),
-                onPressed: () {},
+                icon: SvgPicture.asset(
+                  "assets/icons/Chat bubble Icon.svg",
+                  color: MenuState.message == selectedMenu
+                      ? kPrimaryColor
+                      : inActiveIconColor,
+                ),
+                onPressed: () => Get.toNamed('/pengaduan'),
+                // Navigator.pushNamed(context, Pengaduan.routeName),
+              ),
+              IconButton(
+                icon: SvgPicture.asset(
+                  "assets/icons/Bill Icon.svg",
+                  color: MenuState.riwayat == selectedMenu
+                      ? kPrimaryColor
+                      : inActiveIconColor,
+                ),
+                onPressed: () => Get.toNamed('/riwayatperawatan'),
+                //Navigator.pushNamed(context, RiwayatPerawatan.routeName),
               ),
               IconButton(
                 icon: SvgPicture.asset(
@@ -64,8 +91,8 @@ class CustomBottomNavBar extends StatelessWidget {
                       ? kPrimaryColor
                       : inActiveIconColor,
                 ),
-                onPressed: () =>
-                    Navigator.pushNamed(context, ProfileScreen.routeName),
+                onPressed: () => Get.toNamed('/profilescreen'),
+                // Navigator.pushNamed(context, ProfileScreen.routeName),
               ),
             ],
           )),

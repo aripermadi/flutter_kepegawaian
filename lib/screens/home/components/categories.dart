@@ -3,6 +3,7 @@ import 'package:flutter_kepegawaian/screens/Ketersediaan_TT/screen_tt.dart';
 import 'package:flutter_kepegawaian/screens/fasilitas/layanan_unggulan.dart';
 import 'package:flutter_kepegawaian/screens/home/components/section_title.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get.dart';
 
 import '../../../size_config.dart';
 
@@ -10,7 +11,7 @@ class Categories extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     List<Map<String, dynamic>> categories = [
-      {"icon": "assets/icons/Flash Icon.svg", "text": "CT-SCAN"},
+      //{"icon": "assets/icons/Flash Icon.svg", "text": "CT-SCAN"},
       {"icon": "assets/icons/Bill Icon.svg", "text": "HD"},
       {"icon": "assets/icons/Game Icon.svg", "text": "LAB"},
       {"icon": "assets/icons/Gift Icon.svg", "text": "Radiologi"},
@@ -32,7 +33,9 @@ class Categories extends StatelessWidget {
                 icon: categories[index]["icon"],
                 text: categories[index]["text"],
                 press: () {
-                  Navigator.pushNamed(context, LayananUnggulan.routeName);
+                  // Navigator.pushNamed(context, LayananUnggulan.routeName);
+                  Get.toNamed('/layananunggulan',
+                      arguments: categories[index]["text"]);
                 },
               ),
             ),

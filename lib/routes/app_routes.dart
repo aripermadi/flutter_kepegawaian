@@ -5,5 +5,15 @@ abstract class Routes {
   static const SPLASH = '/splash';
   static const HOME = '/home';
   static const LOGIN = '/login';
-  static const CADASTRO = '/cadastro';
+  static const SignUpScreen = '/daftar';
+  static const CATEGORY = '/category';
+  static const LayananUnggulan = '/layananunggulan';
+  static const Booking = '/booking';
+  static const LoginSuccessScreen = '/loginsukses';
+  static const Pengaduan = '/pengaduan';
+  static const RiwayatBooking = '/riwayatbooking';
+  static const RiwayatPerawatan = '/riwayatperawatan';
+  static const JadwalDokter = '/jadwaldokter';
+  static const KetersediaanTT = '/ketersediaantt';
+  static const ProfileScreen = '/profilescreen';
 }

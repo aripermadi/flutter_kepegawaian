@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_kepegawaian/screens/home/components/section_title.dart';
 import 'package:flutter_kepegawaian/screens/sign_up/sign_up_screen.dart';
+import 'package:get/get.dart';
 
 import '../../../size_config.dart';
 
@@ -12,7 +13,8 @@ class DiscountBanner extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => Navigator.pushNamed(context, SignUpScreen.routeName),
+      onTap: () => Get.toNamed('/daftar'),
+      //Navigator.pushNamed(context, SignUpScreen.routeName),
       child: Container(
         // height: 90,
         width: double.infinity,

@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_kepegawaian/screens/Ketersediaan_TT/components/list_kamar.dart';
+import 'package:flutter_kepegawaian/screens/booking/cekbooking.dart';
 import 'package:flutter_kepegawaian/screens/home/components/special_offers.dart';
-
-
 
 class Booking extends StatelessWidget {
   static String routeName = "/booking";
+
   @override
   Widget build(BuildContext context) {
     final SpecialOfferCard specialOfferCard =
@@ -13,9 +13,9 @@ class Booking extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         actions: [],
-        title: Text("Buat Janji/BOOKING"),
+        title: Text("Cek Status Booking"),
       ),
-      body: ListKamar(),
+      body: GestureDetector(child: CekBooking()),
     );
   }
 }
