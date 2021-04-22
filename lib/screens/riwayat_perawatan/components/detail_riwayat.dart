@@ -36,7 +36,8 @@ class _DetailRiwayatState extends State<DetailRiwayat> {
                       children: [
                         Text.rich(
                           TextSpan(
-                              text: "POLI :", style: TextStyle(fontSize: 20)),
+                              text: "No Rawat :",
+                              style: TextStyle(fontSize: 20)),
                         ),
                       ],
                     ),
@@ -58,8 +59,30 @@ class _DetailRiwayatState extends State<DetailRiwayat> {
                       children: [
                         Text.rich(
                           TextSpan(
+                              text: "Dokter:", style: TextStyle(fontSize: 16)),
+                        ),
+                      ],
+                    ),
+                    SizedBox(
+                      height: (5),
+                    ),
+                    Row(
+                      children: [
+                        Text.rich(
+                          TextSpan(
                               text: "Jam Praktek:",
-                              style: TextStyle(fontSize: 14)),
+                              style: TextStyle(fontSize: 16)),
+                        ),
+                      ],
+                    ),
+                    SizedBox(
+                      height: (5),
+                    ),
+                    Row(
+                      children: [
+                        Text.rich(
+                          TextSpan(
+                              text: "Status:", style: TextStyle(fontSize: 16)),
                         ),
                       ],
                     ),

@@ -13,7 +13,10 @@ class DiscountBanner extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => Get.toNamed('/daftar'),
+      onTap: () {
+        showAlertDialog(context);
+      },
+      //onTap: () => Get.toNamed('/daftar'),
       //Navigator.pushNamed(context, SignUpScreen.routeName),
       child: Container(
         // height: 90,
@@ -43,6 +46,37 @@ class DiscountBanner extends StatelessWidget {
           ),
         ),
       ),
+    );
+  }
+
+  showAlertDialog(BuildContext context) {
+    // set up the buttons
+    Widget loginButton = FlatButton(
+      child: Text("login"),
+      onPressed: () => Get.toNamed('/login'),
+    );
+    Widget bookingButton = FlatButton(
+      child: Text("booking"),
+      onPressed: () => Get.toNamed('/daftar'),
+    );
+
+    // set up the AlertDialog
+    AlertDialog alert = AlertDialog(
+      title: Text("Informasi"),
+      content: Text(
+          "Jika anda pasien lama atau pernah berobat sebelumnya, untuk nomor rekam medis dan password login bisa Anda tanyakan kepada petugas Kami saat Anda melakukan registrasi secara offline. Dan password bisa Anda ubah setelah login di aplikasi EPasien. Jika Anda pasien baru dan belum pernah periksa sebelumnya, silahkan melakukan booking atau buat janji melalui menu utama EPasien ini. Setelah admin kami melakukan verifikasi data, Anda akan mendapat password login dan antrian periksa sesuai booking Anda."),
+      actions: [
+        loginButton,
+        bookingButton,
+      ],
+    );
+
+    // show the dialog
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return alert;
+      },
     );
   }
 }

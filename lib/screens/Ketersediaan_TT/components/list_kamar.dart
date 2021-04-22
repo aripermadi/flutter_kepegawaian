@@ -44,15 +44,15 @@ class _ListKamarState extends State<ListKamar> {
                             mainAxisAlignment: MainAxisAlignment.center,
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
-                              Row(
+                              /*Row(
                                 children: [
                                   Text.rich(
                                     TextSpan(
-                                        text: "Nama : ",
+                                        // text: "Nama : ",
                                         style: TextStyle(fontSize: 20)),
                                   ),
                                 ],
-                              ),
+                              ),*/
                               // SizedBox(
                               //   height: (5),
                               // ),

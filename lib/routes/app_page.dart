@@ -12,6 +12,7 @@ import 'package:flutter_kepegawaian/screens/pengaduan/pengaduan.dart';
 import 'package:flutter_kepegawaian/screens/profile/profile_screen.dart';
 import 'package:flutter_kepegawaian/screens/riwayat_booking/riwayat_booking.dart';
 import 'package:flutter_kepegawaian/screens/riwayat_perawatan/riwayat_perawatan.dart';
+import 'package:flutter_kepegawaian/screens/sign_in/sign_in_screen.dart';
 import 'package:flutter_kepegawaian/screens/sign_up/sign_up_screen.dart';
 import 'package:flutter_kepegawaian/screens/splash/splash_screen.dart';
 import 'package:get/get.dart';
@@ -27,6 +28,10 @@ abstract class AppPages {
     GetPage(
       name: Routes.HOME,
       page: () => HomeScreen(),
+    ),
+    GetPage(
+      name: Routes.SignInScreen,
+      page: () => SignInScreen(),
     ),
     GetPage(
       name: Routes.SignUpScreen,

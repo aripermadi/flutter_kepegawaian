@@ -18,6 +18,11 @@ class Body extends StatelessWidget {
             press: () => {},
           ),
           ProfileMenu(
+            text: "Panduan",
+            icon: "assets/icons/User Icon.svg",
+            press: () => {},
+          ),
+          ProfileMenu(
             text: "Riwayat Perawatan",
             icon: "assets/icons/Bell.svg",
             press: () {},

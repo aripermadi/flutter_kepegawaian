@@ -12,17 +12,17 @@ class Categories extends StatelessWidget {
   Widget build(BuildContext context) {
     List<Map<String, dynamic>> categories = [
       //{"icon": "assets/icons/Flash Icon.svg", "text": "CT-SCAN"},
-      {"icon": "assets/icons/Bill Icon.svg", "text": "HD"},
+      {"icon": "assets/icons/Bill Icon.svg", "text": "Kamar"},
       {"icon": "assets/icons/Game Icon.svg", "text": "LAB"},
       {"icon": "assets/icons/Gift Icon.svg", "text": "Radiologi"},
-      {"icon": "assets/icons/Discover.svg", "text": "More"},
+      {"icon": "assets/icons/Discover.svg", "text": "Operasi"},
     ];
 
     return Padding(
       padding: EdgeInsets.all(getProportionateScreenWidth(20)),
       child: Column(
         children: [
-          SectionTitle(title: "Fasilitas Dan Tarif", press: () {}),
+          SectionTitle(title: "INFORMASI TARIF", press: () {}),
           SizedBox(height: getProportionateScreenWidth(20)),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,

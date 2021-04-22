@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_kepegawaian/screens/Ketersediaan_TT/screen_tt.dart';
 import 'package:flutter_kepegawaian/screens/jadwal_dokter/jadwaldokter.dart';
+import 'package:get/get.dart';
 
 import '../../../size_config.dart';
 import 'section_title.dart';
@@ -30,7 +31,8 @@ class SpecialOffers extends StatelessWidget {
                 image: "assets/images/bedhost.png",
                 category: "KAMAR",
                 press: () {
-                  Navigator.pushNamed(context, KetersediaanTT.routeName);
+                  Get.toNamed('/ketersediaantt');
+                  // Navigator.pushNamed(context, KetersediaanTT.routeName);
                 },
               ),
               SpecialOfferCard(
