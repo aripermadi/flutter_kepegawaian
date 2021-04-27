@@ -63,12 +63,6 @@ class _CekBookingState extends State<CekBooking> {
             text: "Lanjut",
             press: () {
               Get.toNamed('/home');
-              //Navigator.pushNamed(context, LoginSuccessScreen.routeName);
-
-              /*if (_formKey.currentState.validate()) {
-                _formKey.currentState.save();
-                // if all are valid then go to success screen
-              }*/
             },
           ),
         ],
