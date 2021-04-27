@@ -1,3 +1,4 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_kepegawaian/screens/Ketersediaan_TT/screen_tt.dart';
 import 'package:flutter_kepegawaian/screens/fasilitas/layanan_unggulan.dart';
@@ -13,13 +14,25 @@ class Categories extends StatelessWidget {
     List<Map<String, dynamic>> categories = [
       //{"icon": "assets/icons/Flash Icon.svg", "text": "CT-SCAN"},
       {
-        "icon": "assets/icons/Bill Icon.svg",
+        "icon": "assets/icons/bed.svg",
         "text": "Kamar",
         "page": "/ketersediaantt"
       },
-      {"icon": "assets/icons/Game Icon.svg", "text": "LAB"},
-      {"icon": "assets/icons/Gift Icon.svg", "text": "Radiologi"},
-      {"icon": "assets/icons/Discover.svg", "text": "Operasi"},
+      {
+        "icon": "assets/icons/lab.svg",
+        "text": "LAB",
+        "page": "/layananunggulan"
+      },
+      {
+        "icon": "assets/icons/rad.svg",
+        "text": "Radiologi",
+        "page": "/layananunggulan"
+      },
+      {
+        "icon": "assets/icons/ok.svg",
+        "text": "Operasi",
+        "page": "/layananunggulan"
+      },
 
       //{"icon": "assets/icons/Discover.svg", "text": "Ketersediaan KAMAR"},
     ];
@@ -30,18 +43,21 @@ class Categories extends StatelessWidget {
         children: [
           SectionTitle(title: "INFORMASI DAN TARIF", press: () {}),
           SizedBox(height: getProportionateScreenWidth(20)),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: List.generate(
-              categories.length,
-              (index) => CategoryCard(
-                icon: categories[index]["icon"],
-                text: categories[index]["text"],
-                press: () {
-                  Get.toNamed(categories[index]["page"],
-                      arguments: categories[index]["text"]);
-                },
+          SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: List.generate(
+                categories.length,
+                (index) => CategoryCard(
+                  icon: categories[index]["icon"],
+                  text: categories[index]["text"],
+                  press: () {
+                    Get.toNamed(categories[index]["page"],
+                        arguments: categories[index]["text"]);
+                  },
+                ),
               ),
             ),
           ),
@@ -67,13 +83,13 @@ class CategoryCard extends StatelessWidget {
     return GestureDetector(
       onTap: press,
       child: SizedBox(
-        width: getProportionateScreenWidth(55),
+        width: getProportionateScreenWidth(90),
         child: Column(
           children: [
             Container(
               padding: EdgeInsets.all(getProportionateScreenWidth(15)),
-              height: getProportionateScreenWidth(55),
-              width: getProportionateScreenWidth(55),
+              height: getProportionateScreenWidth(70),
+              width: getProportionateScreenWidth(70),
               decoration: BoxDecoration(
                 color: Color(0xFFFFECDF),
                 borderRadius: BorderRadius.circular(10),
