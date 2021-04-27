@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_kepegawaian/screens/home/components/section_title.dart';
+import 'package:flutter_kepegawaian/screens/jadwal_dokter/components/list_dokter.dart';
+import 'package:flutter_kepegawaian/screens/jadwal_dokter/jadwaldokter.dart';
 
 import '../../../size_config.dart';
 import 'categories.dart';
@@ -19,9 +21,14 @@ class Body extends StatelessWidget {
             HomeHeader(),
             DiscountBanner(),
             Categories(),
-            SpecialOffers(),
+            //SpecialOffers(),
             SizedBox(height: getProportionateScreenWidth(30)),
             PopularProducts(),
+            SizedBox(height: getProportionateScreenWidth(30)),
+            Padding(
+              padding: const EdgeInsets.all(5.0),
+              child: ListDokter(),
+            ),
             SizedBox(height: getProportionateScreenWidth(30)),
           ],
         ),

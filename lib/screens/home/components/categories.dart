@@ -12,17 +12,23 @@ class Categories extends StatelessWidget {
   Widget build(BuildContext context) {
     List<Map<String, dynamic>> categories = [
       //{"icon": "assets/icons/Flash Icon.svg", "text": "CT-SCAN"},
-      {"icon": "assets/icons/Bill Icon.svg", "text": "Kamar"},
+      {
+        "icon": "assets/icons/Bill Icon.svg",
+        "text": "Kamar",
+        "page": "/ketersediaantt"
+      },
       {"icon": "assets/icons/Game Icon.svg", "text": "LAB"},
       {"icon": "assets/icons/Gift Icon.svg", "text": "Radiologi"},
       {"icon": "assets/icons/Discover.svg", "text": "Operasi"},
+
+      //{"icon": "assets/icons/Discover.svg", "text": "Ketersediaan KAMAR"},
     ];
 
     return Padding(
       padding: EdgeInsets.all(getProportionateScreenWidth(20)),
       child: Column(
         children: [
-          SectionTitle(title: "INFORMASI TARIF", press: () {}),
+          SectionTitle(title: "INFORMASI DAN TARIF", press: () {}),
           SizedBox(height: getProportionateScreenWidth(20)),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -33,8 +39,7 @@ class Categories extends StatelessWidget {
                 icon: categories[index]["icon"],
                 text: categories[index]["text"],
                 press: () {
-                  // Navigator.pushNamed(context, LayananUnggulan.routeName);
-                  Get.toNamed('/layananunggulan',
+                  Get.toNamed(categories[index]["page"],
                       arguments: categories[index]["text"]);
                 },
               ),

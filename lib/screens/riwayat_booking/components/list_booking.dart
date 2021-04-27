@@ -15,10 +15,6 @@ class _ListBookingState extends State<ListBooking> {
     return Scaffold(
       body: GestureDetector(
         child: Container(
-          decoration: BoxDecoration(
-            color: Colors.black12,
-            borderRadius: BorderRadius.circular(15),
-          ),
           margin: EdgeInsets.all(10),
           width: double.infinity,
           height: getProportionateScreenHeight(250),

@@ -15,7 +15,7 @@ class RiwayatPerawatan extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         actions: [],
-        title: Text("Riwayat Kunjungan"),
+        //title: Text("Riwayat Kunjungan"),
       ),
       body: DetailRiwayat(),
       bottomNavigationBar: CustomBottomNavBar(selectedMenu: MenuState.riwayat),

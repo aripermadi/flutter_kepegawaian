@@ -14,19 +14,20 @@ class _DetailRiwayatState extends State<DetailRiwayat> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        decoration: BoxDecoration(
-          //color: Colors.black12,
-          borderRadius: BorderRadius.circular(15),
-        ),
         margin: EdgeInsets.all(10),
         width: double.infinity,
-        height: getProportionateScreenHeight(150),
+        height: getProportionateScreenHeight(200),
         child: Container(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text("Data Kunjungan", style: TextStyle(fontSize: 18)),
+              SizedBox(
+                height: (10),
+              ),
               Card(
+                shape: new RoundedRectangleBorder(
+                    borderRadius: new BorderRadius.circular(20.0)),
                 elevation: 5,
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,

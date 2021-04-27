@@ -17,10 +17,6 @@ class _ListKamarState extends State<ListKamar> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        decoration: BoxDecoration(
-          color: Colors.black12,
-          borderRadius: BorderRadius.circular(10),
-        ),
         margin: EdgeInsets.all(10),
         width: double.infinity,
         //height: getProportionateScreenHeight(200),
