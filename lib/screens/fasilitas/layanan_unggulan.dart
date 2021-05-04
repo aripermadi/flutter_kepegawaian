@@ -5,7 +5,6 @@ import 'package:get/get.dart';
 import 'components/body.dart';
 
 class LayananUnggulan extends StatelessWidget {
-  static String routeName = "/layananunggulan";
   @override
   Widget build(BuildContext context) {
     var title = Get.arguments;

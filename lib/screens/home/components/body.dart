@@ -26,7 +26,7 @@ class Body extends StatelessWidget {
             PopularProducts(),
             SizedBox(height: getProportionateScreenWidth(30)),
             Padding(
-              padding: const EdgeInsets.all(5.0),
+              padding: const EdgeInsets.all(10.0),
               child: ListDokter(),
             ),
             SizedBox(height: getProportionateScreenWidth(30)),

@@ -56,6 +56,7 @@ class Categories extends StatelessWidget {
                   press: () {
                     Get.toNamed(categories[index]["page"],
                         arguments: categories[index]["text"]);
+                    // Get.toNamed('/layananunggulan');
                   },
                 ),
               ),
