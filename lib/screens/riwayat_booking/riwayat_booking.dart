@@ -15,6 +15,7 @@ class RiwayatBooking extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         actions: [],
+        centerTitle: true,
         title: Text("Riwayat Booking"),
       ),
       body: ListBooking(),

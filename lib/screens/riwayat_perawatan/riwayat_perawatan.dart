@@ -12,6 +12,7 @@ class RiwayatPerawatan extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         actions: [],
+        centerTitle: true,
         title: Text("Riwayat Kunjungan"),
       ),
       body: Body(),
