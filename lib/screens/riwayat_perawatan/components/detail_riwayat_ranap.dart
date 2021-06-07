@@ -3,13 +3,13 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_kepegawaian/size_config.dart';
 
-class DetailRiwayat extends StatefulWidget {
-  DetailRiwayat({Key key}) : super(key: key);
+class DetailRiwayatRanap extends StatefulWidget {
+  DetailRiwayatRanap({Key key}) : super(key: key);
   @override
-  _DetailRiwayatState createState() => new _DetailRiwayatState();
+  _DetailRiwayatRanapState createState() => new _DetailRiwayatRanapState();
 }
 
-class _DetailRiwayatState extends State<DetailRiwayat> {
+class _DetailRiwayatRanapState extends State<DetailRiwayatRanap> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,13 +21,13 @@ class _DetailRiwayatState extends State<DetailRiwayat> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text("Data Kunjungan", style: TextStyle(fontSize: 18)),
+              Text("Data Kunjungan Ranap", style: TextStyle(fontSize: 18)),
               SizedBox(
                 height: (10),
               ),
               Card(
                 shape: new RoundedRectangleBorder(
-                    borderRadius: new BorderRadius.circular(20.0)),
+                    borderRadius: new BorderRadius.circular(10.0)),
                 elevation: 5,
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_kepegawaian/screens/fasilitas/controller/controllerlab.dart';
+import 'package:flutter_kepegawaian/screens/fasilitas/controller/controllerok.dart';
 import 'package:get/get.dart';
 
 class TarifOk extends StatefulWidget {
@@ -8,7 +8,7 @@ class TarifOk extends StatefulWidget {
 }
 
 class _TarifOkState extends State<TarifOk> {
-  final layananController = Get.put(LayananController());
+  final okController = Get.put(OkController());
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -19,7 +19,7 @@ class _TarifOkState extends State<TarifOk> {
         child: Column(
           children: <Widget>[
             Obx(() {
-              if (layananController.listLaborat.length != 0) {
+              if (okController.listOperasi.length != 0) {
                 return ListView.separated(
                   separatorBuilder: (context, index) {
                     return Divider(
@@ -31,12 +31,12 @@ class _TarifOkState extends State<TarifOk> {
                   itemBuilder: (context, index) {
                     return ListTile(
                       title: Text(
-                          "${layananController.listLaborat.value[index].nmPerawatan}"),
-                      subtitle: Text(
-                          layananController.listLaborat.value[index].totalByr),
+                          "${okController.listOperasi.value[index].nmPerawatan}"),
+                      subtitle:
+                          Text(okController.listOperasi.value[index].operator1),
                     );
                   },
-                  itemCount: layananController.listLaborat.length,
+                  itemCount: okController.listOperasi.length,
                 );
               } else {
                 return Center(

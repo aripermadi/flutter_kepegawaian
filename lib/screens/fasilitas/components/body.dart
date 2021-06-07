@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_kepegawaian/screens/fasilitas/components/listunggulan.dart';
 import 'package:flutter_kepegawaian/screens/fasilitas/components/search_field.dart';
+import 'package:flutter_kepegawaian/screens/fasilitas/components/tarif_ok.dart';
 import 'package:flutter_kepegawaian/screens/fasilitas/components/tarif_rad.dart';
 import 'package:flutter_kepegawaian/screens/fasilitas/layanan_unggulan.dart';
 import 'package:get/get.dart';
@@ -16,7 +17,9 @@ class Body extends StatelessWidget {
             ? ListUnggulan()
             : argument == "Radiologi"
                 ? TarifRad()
-                : ListUnggulan(),
+                : argument == "Operasi"
+                    ? TarifOk()
+                    : ListUnggulan(),
       ],
     );
   }

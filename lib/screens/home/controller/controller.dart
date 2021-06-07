@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_kepegawaian/screens/fasilitas/models/radiologi.dart';
 import 'package:flutter_kepegawaian/screens/home/controller/connect.dart';
 import 'package:flutter_kepegawaian/screens/home/models.dart';
 import 'package:flutter_kepegawaian/screens/home/models/pengumuman.dart';
-import 'package:flutter_kepegawaian/screens/home/models/radiologi.dart';
 import 'package:get/get.dart';
 import 'package:get/get_connect/http/src/http/utils/body_decoder.dart';
 import 'package:meta/meta.dart';
@@ -24,11 +24,14 @@ class HomeController extends GetxController {
 
   Future login() async {
     try {
-      Get.dialog(
-          Center(
-            child: CircularProgressIndicator(),
-          ),
-          barrierDismissible: true);
+      Future.delayed(
+        Duration.zero,
+        () => Get.dialog(
+            Center(
+              child: CircularProgressIndicator(),
+            ),
+            barrierDismissible: true),
+      );
       hasil.value = '';
       var data = await UserProvider().login('signin', rkm.text, ktp.text);
       var res = data.state;
@@ -44,12 +47,14 @@ class HomeController extends GetxController {
 
   Future pengumuman() async {
     try {
-      Get.dialog(
-          Center(
-            child: CircularProgressIndicator(),
-          ),
-          barrierDismissible: true);
-
+      Future.delayed(
+        Duration.zero,
+        () => Get.dialog(
+            Center(
+              child: CircularProgressIndicator(),
+            ),
+            barrierDismissible: true),
+      );
       var data = await GetPengumuman().pengumuman();
       listPengumuman.value = data;
 

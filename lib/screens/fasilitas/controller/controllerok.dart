@@ -1,53 +1,37 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_kepegawaian/screens/fasilitas/controller/connect.dart';
-import 'package:flutter_kepegawaian/screens/fasilitas/models/laborat.dart';
+import 'package:flutter_kepegawaian/screens/fasilitas/models/operasi.dart';
+import 'package:flutter_kepegawaian/screens/fasilitas/models/radiologi.dart';
 import 'package:flutter_kepegawaian/screens/home/controller/connect.dart';
 import 'package:flutter_kepegawaian/screens/home/models.dart';
 import 'package:flutter_kepegawaian/screens/home/models/pengumuman.dart';
-import 'package:flutter_kepegawaian/screens/home/models/radiologi.dart';
 import 'package:get/get.dart';
 import 'package:get/get_connect/http/src/http/utils/body_decoder.dart';
 import 'package:meta/meta.dart';
 
-class LayananController extends GetxController {
-  var listRad = List<Radiologi>().obs;
-  var listPengumuman = List<Pengumuman>().obs;
+class OkController extends GetxController {
+  var listOperasi = List<Operasi>().obs;
 
   // var listOperasi = List<Operas>().obs;
 
   void onInit() async {
-    //await laborat();
+    await opr();
     super.onInit();
   }
 
-  Future rad() async {
+  Future opr() async {
     try {
-      Get.dialog(
-          Center(
-            child: CircularProgressIndicator(),
-          ),
-          barrierDismissible: true);
-
-      var data = await GetRad().radiologi();
-      listRad.value = data;
-
-      Get.back();
-    } catch (e) {
-      print(e);
-      Get.back();
-    }
-  }
-
-  Future pengumuman() async {
-    try {
-      Get.dialog(
-          Center(
-            child: CircularProgressIndicator(),
-          ),
-          barrierDismissible: true);
-
-      var data = await GetPengumuman().pengumuman();
-      listPengumuman.value = data;
+      Future.delayed(
+        Duration.zero,
+        () => Get.dialog(
+            Center(
+              child: CircularProgressIndicator(),
+            ),
+            barrierDismissible: true),
+      );
+      var data = await GetOperasi().operasi();
+      print(data);
+      listOperasi.value = data;
 
       Get.back();
     } catch (e) {

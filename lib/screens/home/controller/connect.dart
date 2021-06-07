@@ -1,7 +1,6 @@
 import 'package:flutter_kepegawaian/config.dart';
 import 'package:flutter_kepegawaian/screens/home/models.dart';
 import 'package:flutter_kepegawaian/screens/home/models/pengumuman.dart';
-import 'package:flutter_kepegawaian/screens/home/models/radiologi.dart';
 import 'package:get/get_connect/connect.dart';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
